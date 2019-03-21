@@ -49,6 +49,8 @@ npm test
         store---vuex状态管理
       
         pages---主要页面
+        
+        jsonServer---假数据json-server 启动命令---json-server --watch db.json 
       
         libs---公共方法文件
             axios---api请求配置文件
