@@ -6,11 +6,11 @@
 
 const express = require('express');
 const app = express();
-const home = require('./router/home.js'); //  首页逻辑
+const home = require('./router/routerHome'); //  首页路由
 
 //  注册路由
-app.use(home);
+// app.use(home);
 
-app.listen(8080, () => {
+app.listen(3306, () => {
   console.log('running');
 })

@@ -4,7 +4,7 @@ var ConnectServer = mysql.createConnection({
   host: 'localhost',
   user: 'root',
   password: 'root',
-  database: ''
+  database: 'myf'
 });
 ConnectServer.connect();
 module.exports = ConnectServer;

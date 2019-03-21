@@ -42,6 +42,16 @@ npm test
         assets---静态文件
       
         components---公共模块
+        
+        nodeServer---node服务器
+            db---连接服务器入口
+            
+            router---请求路由
+            
+            logic---主要项目逻辑
+            
+            server.js---node服务器
+            
       
         router---路由
             index.js---路由路口
