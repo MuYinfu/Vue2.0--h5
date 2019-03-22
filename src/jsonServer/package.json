@@ -1,0 +1,5 @@
+{
+  "scripts": {
+    "jsonServer": "json-server --watch db.json"
+  }
+}
