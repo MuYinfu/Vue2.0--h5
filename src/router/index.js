@@ -8,6 +8,11 @@ export default new Router({
       path: '/',
       name: 'HelloWorld',
       component: () => import('@/components/HelloWorld')
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: () => import('@/pages/login/login')
     }
   ]
 })
