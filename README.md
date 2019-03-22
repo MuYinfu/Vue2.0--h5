@@ -29,7 +29,7 @@ npm test
 ------------------
     项目使用vue2.6 + vuex + axios + vueRouter + mint-ui  简单搭建
       项目使用easymock模拟数据
-        项目本来想使用typescript搭建，但是构造项目时webpack版本太低，升级很麻烦（我不会）所以没有引入
+      项目本来想使用typescript搭建，但是构造项目时webpack版本太低，升级很麻烦（我不会）所以没有引入
     
     build---webpack配置文件
 
