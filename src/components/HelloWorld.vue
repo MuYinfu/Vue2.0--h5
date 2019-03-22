@@ -1,9 +1,10 @@
 <template>
-  <div class="hello">
+  <div class="hello" v-cloak>
     <div class="titleDiv">{{msg}}</div>
     <div class='helloDiv' v-for='item in formData'>
       {{item.courseName}}
     </div>
+    <mt-button type="primary" class='loginBtn' @click='getLogin'>primary</mt-button>
   </div>
 </template>
 
@@ -18,8 +19,8 @@ export default {
     }
   },
   methods:{
-    getListData(){
-
+    getLogin(){
+      this.$router.push({path : '/login'})
     }
   },
   created(){
@@ -45,6 +46,11 @@ function getListData() {
   }
   .helloDiv{
    .mt(10)
+  }
+  .loginBtn{
+    .h(50);
+    .w(200);
+    margin: 0 auto;
   }
 
 </style>

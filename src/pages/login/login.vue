@@ -1,5 +1,5 @@
 <template>
-    <div class='warp' @click='getHellowWorld'>
+    <div class='warp' @click='getHellowWorld' v-cloak>
         {{msg}}
     </div>
 </template>
