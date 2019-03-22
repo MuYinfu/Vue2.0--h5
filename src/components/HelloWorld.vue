@@ -28,7 +28,7 @@ export default {
   }
 }
 function getListData() {
-   _this.$get('/getListData')
+   _this.$get('/news')
      .then(res => {
        _this.formData  = res.list;
      })
