@@ -44,6 +44,7 @@ npm test
         components---公共模块
         
         nodeServer---node服务器
+            在js里面每个模块都相等于一个闭包，需要导出及引入
             db---连接服务器入口
             
             router---请求路由

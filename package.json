@@ -15,6 +15,8 @@
   "dependencies": {
     "amfe-flexible": "^2.2.1",
     "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "express-session": "^1.15.6",
     "fastclick": "^1.0.6",
     "json-server": "^0.14.2",
     "less": "^3.9.0",

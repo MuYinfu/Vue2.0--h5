@@ -9,3 +9,5 @@ router.get('/getListData', (req,res) =>{
   logicHome.getListData(req, res);
 })
 
+//  导出模块
+module.exports = router;
