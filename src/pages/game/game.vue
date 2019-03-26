@@ -3,7 +3,7 @@
     <!--拖拽区-->
     <section class='Drag'>
       <ul class='Drag_ul'>
-        <li v-for='(item,index) in formData' class='Drag_ul_li' :key='index' @click='getElementMove(index)'>
+        <li v-for='(item,index) in formData' class='Drag_ul_li' :key='index' @click.stop.prevent='getElementMove(index)'>
           {{item}}
         </li>
       </ul>
@@ -23,7 +23,7 @@
 
 <script>
   import {commonFun} from "../../libs/common";
-  var oL, oT, maxW, maxH, oLeft, oTop;
+  var oL, oT, maxW, maxH, oLeft, oTop, htmlFontSize;
   var _this;
     export default {
       name: "game",
@@ -39,20 +39,25 @@
       methods:{
         // 元素移动事件
         getElementMove: function (index) {
+          htmlFontSize = window.document.querySelector('html').style.fontSize;
+          htmlFontSize.slice(0,htmlFontSize.length-2);
           let ele = document.querySelectorAll('.Drag_ul_li')[index];
            maxW = document.body.clientWidth-ele.offsetWidth;
            maxH = document.body.clientHeight-ele.offsetHeight;
           //  按下
           ele.addEventListener('touchstart', evt => {
+            evt.preventDefault();
             let touch = evt.targetTouches[0];
             this.elementLocaton = ele.getBoundingClientRect();
-            evt.preventDefault();
+            console.log(this.elementLocaton);
             oL = touch.clientX - ele.offsetLeft;
             oT = touch.clientY - ele.offsetTop;
           },false)
 
           //  移动
           ele.addEventListener('touchmove', evt => {
+            htmlFontSize = window.document.querySelector('html').style.fontSize;
+            htmlFontSize.slice(0,htmlFontSize.length-2);
             evt.preventDefault();
             if(evt.targetTouches.length == 1){
               let touch = evt.targetTouches[0];
@@ -68,31 +73,46 @@
               }else if (oTop>=maxH) {
                 oTop=maxH;
               }
+                // console.log(this.elementLocaton)
+              if(oTop >= this.recoverydata[0].y-this.elementLocaton.height && oLeft >= this.recoverydata[0].x-this.elementLocaton.x && oLeft<= this.recoverydata[0].x*2){
+                console.log('这里是第一个垃圾桶')
+              }else if(oTop >= this.recoverydata[0].y-this.elementLocaton.height && oLeft >= this.recoverydata[1].x - this.recoverydata[0].x*2 && oLeft<= this.recoverydata[2].x - this.recoverydata[1].width){
+                console.log('这里是第二个垃圾桶')
+              }else if(oTop >= this.recoverydata[0].y-this.elementLocaton.height && oLeft >= this.recoverydata[2].x-40){
+                console.log('这里是第三个垃圾桶')
+              }
               /**
                * 元素位置-元素宽高度一半== 鼠标一直在中间
                */
-              ele.style.left = oLeft/16 + 'rem';
-              ele.style.top = oTop/16 + 'rem';
+
+              ele.style.left = oLeft/parseFloat(htmlFontSize) + 'rem';
+              ele.style.top = oTop/parseFloat(htmlFontSize) + 'rem';
             }
           },false)
 
           //  结束
           ele.addEventListener('touchend', evt => {
             evt.preventDefault();
-            ele.style.top = this.elementLocaton.y/16 +'rem';
-            ele.style.left = this.elementLocaton.x/16 + 'rem';
+            console.log(this.elementLocaton);
+            ele.style.top = this.elementLocaton.y/parseFloat(htmlFontSize) +'rem';
+            ele.style.left = this.elementLocaton.x/parseFloat(htmlFontSize) + 'rem';
             this.elementLocaton = '';
+          })
+        },
+        getrecovery:function () {
+          const arr = document.querySelectorAll('.recovery_ul_li');
+          Array.from(arr).map(item => {
+            this.recoverydata.push(item.getBoundingClientRect());
+            console.log(this.recoverydata)
           })
         }
 
       },
       created(){
         _this = this;
-        const arr = document.querySelectorAll('recovery_ul_li')
-          Array.from(arr).map(item => {
-          this.recoverydata.push(item.getBoundingClientRect());
-          console.log(this.recoverydata)
-        })
+      },
+      mounted(){
+        this.getrecovery();
       }
     }
 
