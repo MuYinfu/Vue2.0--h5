@@ -9,12 +9,12 @@
       name: "login",
     data() {
         return {
-          msg: '这里是登入路由！'
+          msg: '登入成功！'
         }
     },
     methods:{
       getHellowWorld(){
-        this.$router.push({path : '/'})
+        this.$router.push({path : '/'});
       }
     },
     watch:{

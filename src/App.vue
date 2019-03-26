@@ -25,7 +25,18 @@
       }
     },
     created(){
+      getHtmlFontSize()
     }
+  }
+  function getHtmlFontSize(){
+    let num=window.screen.width
+    if(num >= 640){
+      console.log(num)
+      num = 640
+    }
+    console.log(num)
+    let sum=num*16
+    window.document.querySelector('html').style.fontSize=sum/375+'px'
   }
 </script>
 

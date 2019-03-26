@@ -1,9 +1,9 @@
 // 此为第一种封装
-import axios from 'axios'
-import router from '../router/index'
+import axios from 'axios';
+import router from '../router/index';
 
-axios.defaults.timeout = 5000
-axios.defaults.baseURL = process.env.API_ROOT
+axios.defaults.timeout = 5000;
+axios.defaults.baseURL = process.env.API_ROOT;
 // axios.interceptors.request.use(
 //   config => {
 //     // const token = getCookie('名称');注意使用的时候需要引入cookie方法，推荐js-cookie
@@ -47,10 +47,10 @@ export function get (url, params = {}) {
       params: params
     })
       .then(response => {
-        resolve(response.data)
+        resolve(response.data);
       })
       .catch(err => {
-        reject(err)
+        reject(err);
       })
   })
 }
@@ -65,10 +65,10 @@ export function post (url, data = {}) {
   return new Promise((resolve, reject) => {
     axios.post(url, data)
       .then(response => {
-        resolve(response.data)
+        resolve(response.data);
       })
       .catch(err => {
-        reject(err)
+        reject(err);
       })
   })
 }
@@ -84,10 +84,10 @@ export function patch (url, data = {}) {
   return new Promise((resolve, reject) => {
     axios.patch(url, data)
       .then(response => {
-        resolve(response.data)
+        resolve(response.data);
       })
       .catch(err => {
-        reject(err)
+        reject(err);
       })
   })
 }
@@ -103,10 +103,10 @@ export function put (url, data = {}) {
   return new Promise((resolve, reject) => {
     axios.put(url, data)
       .then(response => {
-        resolve(response.data)
+        resolve(response.data);
       })
       .catch(err => {
-        reject(err)
+        reject(err);
       })
   })
 }

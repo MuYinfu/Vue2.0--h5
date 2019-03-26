@@ -4,7 +4,7 @@
     <div class='helloDiv' v-for='item in formData'>
       {{item.courseName}}
     </div>
-    <mt-button type="primary" class='loginBtn' @click='getLogin'>primary</mt-button>
+    <mt-button type="primary" class='loginBtn' @click='getLogin'>前往游戏页面</mt-button>
   </div>
 </template>
 
@@ -20,7 +20,7 @@ export default {
   },
   methods:{
     getLogin(){
-      this.$router.push({path : '/login'})
+      this.$router.push({path : '/game'});
     }
   },
   created(){
@@ -42,7 +42,8 @@ function getListData() {
   @import "../styles/variable.less";
   .titleDiv{
     .w(375);
-    .margin(10,10,10,10)
+    margin:  16/16rem auto;
+
   }
   .helloDiv{
    .mt(10)
