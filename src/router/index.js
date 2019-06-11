@@ -19,6 +19,16 @@ export default new Router({
       path: '/game',
       name: 'game',
       component: () => import('@/pages/game/game')
+    },
+    {
+      path: '/test',
+      name: 'test',
+      component: () => import('@/pages/test/test')
+    },
+    {
+      path: '/PictureSynthesis',
+      name: 'PictureSynthesis',
+      component: () => import('@/pages/Canvas/PictureSynthesis')
     }
   ]
 })

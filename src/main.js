@@ -31,7 +31,7 @@ window.onresize = () =>{
    * 逻辑为-----
    * 当前窗口宽度/当前字体大小 == 设计图大小/设计图字体大小
    */
-
+  history.go(0);
   let num=window.screen.width;
   if(num >= 640){
     console.log(num);

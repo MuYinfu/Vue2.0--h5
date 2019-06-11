@@ -20,12 +20,12 @@ export default {
   },
   methods:{
     getLogin(){
-      this.$router.push({path : '/game'});
+      this.$router.push({path : '/PictureSynthesis'});
     }
   },
   created(){
     _this = this;
-    getListData();
+    // getListData();
   }
 }
 function getListData() {
