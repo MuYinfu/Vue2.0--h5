@@ -20,7 +20,7 @@ export default {
   },
   methods:{
     getLogin(){
-      this.$router.push({path : '/PictureSynthesis'});
+      this.$router.push({path : '/game'});
     }
   },
   created(){
@@ -42,7 +42,7 @@ function getListData() {
   @import "../styles/variable.less";
   .titleDiv{
     .w(375);
-    margin:  16/16rem auto;
+    .ma();
 
   }
   .helloDiv{
@@ -51,7 +51,7 @@ function getListData() {
   .loginBtn{
     .h(50);
     .w(200);
-    margin: 0 auto;
+    .ma();
   }
 
 </style>

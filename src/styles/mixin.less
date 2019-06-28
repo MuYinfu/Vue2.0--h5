@@ -10,11 +10,12 @@
 .b-radius(@px) {
   border-radius: @px / @baseFontSize * 1rem;
 }
-
-.b-radius(@px) {
-  border-radius: @px / @baseFontSize * 1rem;
+.b-border(@px, @type, @color) {
+  border: @px / @baseFontSize * 1rem @type @color;
 }
-
+.line-height(@px){
+  line-height: @px / @baseFontSize * 1rem;
+}
 .h(@px) {
   height: @px / @baseFontSize * 1rem;
 }
@@ -45,6 +46,9 @@
 
 .mr(@px) {
   margin-right: @px / @baseFontSize * 1rem;
+}
+.ma() {
+  margin: 0 auto;
 }
 
 .pt(@px) {
@@ -225,4 +229,38 @@
 
 .wordspacing(@px) {
   word-spacing: @px / @baseFontSize * 1rem;
+}
+
+.keyframes (@prefix,@name,@content) when (@prefix=def) {
+  @keyframes @name {
+    @content();
+  }
+}
+.keyframes (@prefix,@name,@content) when (@prefix=moz) {
+  @-moz-keyframes @name {
+    @content();
+  }
+}
+.keyframes (@prefix,@name,@content) when (@prefix=o) {
+  @-o-keyframes @name {
+    @content();
+  }
+}
+.keyframes (@prefix,@name,@content) when (@prefix=webkit) {
+  @-webkit-keyframes  @name{
+    @content();
+  }
+}
+.keyframes (@prefix,@name,@content) when (@prefix=all) {
+  .keyframes(moz,@name,@content);
+  .keyframes(o,@name,@content);
+  .keyframes(webkit,@name,@content);
+  .keyframes(def,@name,@content);
+}
+.transform (@all) {
+  -webkit-transform: @all;
+  -moz-transform: @all;
+  -ms-transform: @all;
+  -o-transform: @all;
+  transform: @all;
 }

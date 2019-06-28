@@ -175,7 +175,7 @@
         position: absolute;
         .top(20);
         .left(20);
-        line-height: 100/16rem;
+        .line-height(100);
       }
       .Drag_ul_li1{
         background: red;
@@ -184,7 +184,7 @@
         position: absolute;
         .top(20);
         .right(20);
-        line-height: 100/16rem;
+        .line-height(100);
       }
       .Drag_ul_li2{
         background: red;
@@ -193,7 +193,7 @@
         position: absolute;
         .top(160);
         .left(20);
-        line-height: 100/16rem;
+        .line-height(100);
       }
       .Drag_ul_li3{
         background: red;
@@ -202,7 +202,7 @@
         position: absolute;
         .top(160);
         .right(20);
-        line-height: 100/16rem;
+        .line-height(100);
       }
       .Drag_ul_li4{
         background: red;
@@ -229,11 +229,7 @@
     position: absolute;
     bottom: 0;
     left: 50%;
-    -webkit-transform: translate(-50%);
-    -moz-transform: translate(-50%);
-    -ms-transform: translate(-50%);
-    -o-transform: translate(-50%);
-    transform: translate(-50%);
+    .transform(translate(-50%));
     .w(375);
     .mt(30);
     .mb(30);
@@ -248,9 +244,10 @@
         width: 27%;
         .h(100);
         display: flex;
-        border: 1/16rem solid black;
+        //border: 1/16rem solid black;
+        .b-border(1,solid,black);
         justify-content: center;
-        line-height: 100/16rem;
+        .line-height(100)
       }
     }
   }
